@@ -1,0 +1,33 @@
+@startuml
+title 호텔 Room 예약 시스템 - 유스케이스 다이어그램
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Malgun Gothic
+
+actor "고객" as Customer
+actor "호텔 시스템" as HotelSystem <<system>>
+
+rectangle "호텔 Room 예약 시스템" {
+  usecase "호텔 Room 예약\n--\n옵션 선택" as Reserve
+  usecase "Room 옵션 선택\n--\n유형 선택\n크기 선택\n가격 선택" as Options
+  usecase "Room 유형 선택" as Type
+  usecase "Room 크기 선택" as Size
+  usecase "Room 가격 선택" as Price
+  usecase "예약 번호 발급" as IssueNumber
+}
+
+Customer -- Reserve
+IssueNumber -- HotelSystem
+
+Options ..> Reserve : <<extend>>
+Type ..> Options : <<extend>>
+Size ..> Options : <<extend>>
+Price ..> Options : <<extend>>
+Reserve ..> IssueNumber : <<include>>
+
+note bottom of IssueNumber
+  고객의 Room 예약 완료 시
+  호텔 시스템이 예약 번호를 발급한다.
+end note
+
+@enduml
