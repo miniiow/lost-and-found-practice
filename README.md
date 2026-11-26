@@ -13,3 +13,15 @@
 ### 상세 설계
 
 ## 소프트웨어 테스트
+### TDD
+### 단위 테스트
+- pytest
+- code mertic
+- lizard
+- cpd
+- flask8
+
+## 개발
+### 코딩 규칙
+### branch 전략
+### ...
