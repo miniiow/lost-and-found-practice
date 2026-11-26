@@ -16,3 +16,9 @@
 ### TDD
 ### 단위 테스트
 - pytest
+- code mertic
+- lizard
+- cpd
+- flask8
+
+
